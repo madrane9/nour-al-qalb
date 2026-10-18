@@ -1,0 +1,14 @@
+[
+  { "slug": "sadness", "name": { "ar": "الحزن", "de": "Traurigkeit", "en": "Sadness" }, "color": "#A9CCEB", "icon": "cloud-rain" },
+  { "slug": "fear", "name": { "ar": "الخوف", "de": "Angst", "en": "Fear" }, "color": "#C5B8E6", "icon": "shield" },
+  { "slug": "anger", "name": { "ar": "الغضب", "de": "Wut", "en": "Anger" }, "color": "#F2958A", "icon": "flame" },
+  { "slug": "loneliness", "name": { "ar": "الوحدة", "de": "Einsamkeit", "en": "Loneliness" }, "color": "#9FB1C4", "icon": "moon" },
+  { "slug": "anxiety", "name": { "ar": "القلق", "de": "Sorgen und Unruhe", "en": "Anxiety" }, "color": "#D5C3EE", "icon": "wind" },
+  { "slug": "hope", "name": { "ar": "الأمل", "de": "Hoffnung", "en": "Hope" }, "color": "#A8E0C5", "icon": "sunrise" },
+  { "slug": "patience", "name": { "ar": "الصبر", "de": "Geduld", "en": "Patience" }, "color": "#E3D2A6", "icon": "hourglass" },
+  { "slug": "joy", "name": { "ar": "الفرح", "de": "Freude", "en": "Joy" }, "color": "#FBE08A", "icon": "sun" },
+  { "slug": "gratitude", "name": { "ar": "الشكر", "de": "Dankbarkeit", "en": "Gratitude" }, "color": "#E8C45E", "icon": "heart" },
+  { "slug": "repentance", "name": { "ar": "التوبة", "de": "Reue", "en": "Repentance" }, "color": "#B5CDB0", "icon": "leaf" },
+  { "slug": "uncertainty", "name": { "ar": "الحيرة", "de": "Unsicherheit", "en": "Uncertainty" }, "color": "#F7C4A5", "icon": "compass" },
+  { "slug": "exhaustion", "name": { "ar": "التعب", "de": "Erschöpfung", "en": "Exhaustion" }, "color": "#C9C2BA", "icon": "battery-low" }
+]

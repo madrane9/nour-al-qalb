@@ -1,0 +1,46 @@
+@import '@fontsource/amiri/400.css';
+@import '@fontsource/amiri/700.css';
+@import '@fontsource-variable/inter';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: 250 245 233;
+  --c-card: 255 252 244;
+  --c-ink: 43 38 30;
+  --c-muted: 98 88 72;
+  --c-gold: 138 104 30;
+  --c-line: 226 214 188;
+  --c-shadow: 90 70 30;
+}
+[data-theme='dark'] {
+  --c-bg: 14 22 40;
+  --c-card: 22 32 54;
+  --c-ink: 240 232 214;
+  --c-muted: 177 170 152;
+  --c-gold: 214 178 96;
+  --c-line: 44 56 84;
+  --c-shadow: 0 0 0;
+}
+
+html { background: rgb(var(--c-bg)); color: rgb(var(--c-ink)); }
+body { font-family: theme('fontFamily.sans'); min-height: 100dvh; }
+[dir='rtl'] body { font-family: theme('fontFamily.arabic'); font-size: 1.125em; }
+[dir='rtl'] input, [dir='rtl'] select, [dir='rtl'] textarea, [dir='rtl'] button { font-family: inherit; }
+[data-theme='dark'] .text-ivory { color: rgb(14 22 40); }
+
+.ornament-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 6l8 22 22-8-8 22 22 8-22 8 8 22-22-8-8 22-8-22-22 8 8-22-22-8 22-8-8-22 22 8z' fill='none' stroke='%23b08a3c' stroke-opacity='.12'/%3E%3C/svg%3E");
+}
+
+.star { opacity: .15; animation: twinkle 5s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { opacity: .1; transform: scale(1); } 50% { opacity: .55; transform: scale(1.6); } }
+
+input, select, textarea { color: inherit; }
+:focus-visible { outline: 3px solid rgb(var(--c-gold)); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .star { animation: none; }
+}
