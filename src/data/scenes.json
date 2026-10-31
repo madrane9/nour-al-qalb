@@ -4,10 +4,53 @@
     "entryKey": "39:53",
     "sortOrder": 1,
     "images": [
-      { "lang": "ar", "file": "vergebung-ar.svg", "alt": "شخص حزين يقول: ارتكبت أخطاء كثيرة، الله لن يغفر لي أبدًا. صديقه يسأل: وماذا يقول القرآن؟" },
-      { "lang": "de", "file": "vergebung-de.svg", "alt": "Eine traurige Person sagt: Ich habe so viele Fehler gemacht. Allah wird mir nie vergeben. Ein Freund fragt: Was sagt der Koran dazu?" },
-      { "lang": "en", "file": "vergebung-en.svg", "alt": "A sad person says: I have made so many mistakes. Allah will never forgive me. A friend asks: What does the Quran say?" },
-      { "lang": "fr", "file": "vergebung-fr.svg", "alt": "Une personne triste dit : J'ai commis tant d'erreurs. Allah ne me pardonnera jamais. Un ami demande : Que dit le Coran ?" }
+      {
+        "lang": "ar",
+        "file": "vergebung-ar.svg",
+        "alt": "شخص حزين يقول: ارتكبت أخطاء كثيرة، الله لن يغفر لي أبدًا. صديقه يسأل: وماذا يقول القرآن؟"
+      },
+      {
+        "lang": "de",
+        "file": "vergebung-de.svg",
+        "alt": "Eine traurige Person sagt: Ich habe so viele Fehler gemacht. Allah wird mir nie vergeben. Ein Freund fragt: Was sagt der Koran dazu?"
+      },
+      {
+        "lang": "en",
+        "file": "vergebung-en.svg",
+        "alt": "A sad person says: I have made so many mistakes. Allah will never forgive me. A friend asks: What does the Quran say?"
+      },
+      {
+        "lang": "fr",
+        "file": "vergebung-fr.svg",
+        "alt": "Une personne triste dit : J'ai commis tant d'erreurs. Allah ne me pardonnera jamais. Un ami demande : Que dit le Coran ?"
+      }
+    ]
+  },
+  {
+    "id": "arbeit",
+    "entryKey": "6:44",
+    "sortOrder": 2,
+    "images": [
+      {
+        "lang": "ar",
+        "file": "arbeit-ar.svg",
+        "alt": "في مكتب، رجل يقول: لم أصلِّ منذ عشر سنوات وأموري تمام. امرأة تقول: وأنا منذ أن نزعت الحجاب وجدت وظيفة."
+      },
+      {
+        "lang": "de",
+        "file": "arbeit-de.svg",
+        "alt": "Im Büro sagt ein Mann: Ich bete seit zehn Jahren nicht und mir geht es bestens. Eine Frau sagt: Und seit ich das Kopftuch abgelegt habe, habe ich einen Job."
+      },
+      {
+        "lang": "en",
+        "file": "arbeit-en.svg",
+        "alt": "In an office a man says: I haven't prayed in ten years and my life is just fine. A woman says: And since I took off my hijab, I found a job."
+      },
+      {
+        "lang": "fr",
+        "file": "arbeit-fr.svg",
+        "alt": "Dans un bureau, un homme dit : Je ne prie plus depuis dix ans et tout va très bien. Une femme dit : Et moi, depuis que j'ai enlevé le voile, j'ai trouvé un travail."
+      }
     ]
   }
 ]
