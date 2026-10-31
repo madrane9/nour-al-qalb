@@ -11,6 +11,7 @@ import { JarView } from '@/features/jar/JarView';
 import { MapView } from '@/features/explore/MapView';
 import { ListView } from '@/features/explore/ListView';
 import { ExploreToolbar, type TypeFilter } from '@/features/explore/ExploreToolbar';
+import { ScenesSection } from '@/features/scenes/ScenesSection';
 
 type Mode = 'jar' | 'map' | 'list';
 const MODES: { id: Mode; icon: typeof List }[] = [
@@ -22,7 +23,7 @@ const MODES: { id: Mode; icon: typeof List }[] = [
 export function DiscoverPage() {
   const { t } = useTranslation();
   const { lang } = useLang();
-  const { status, publicEmotions, publicEntries, reload } = useContent();
+  const { status, publicEmotions, publicEntries, publicScenes, reload } = useContent();
   const [params, setParams] = useSearchParams();
   const mode: Mode = (['jar', 'map', 'list'] as const).find((m) => m === params.get('mode')) ?? 'jar';
   const [query, setQuery] = useState('');
@@ -93,6 +94,8 @@ export function DiscoverPage() {
               <EntryCard entry={daily} emotions={publicEmotions} />
             </section>
           )}
+
+          <ScenesSection scenes={publicScenes} entries={publicEntries} emotions={publicEmotions} />
         </>
       )}
     </div>

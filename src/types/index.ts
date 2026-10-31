@@ -41,7 +41,32 @@ export interface Entry {
   sourceVerified: boolean;
 }
 
+/** Sprachen für Szenenbilder. Französisch ist schon vorbereitet. */
+export type SceneLang = Lang | 'fr';
+export const SCENE_LANGS: readonly SceneLang[] = ['ar', 'de', 'en', 'fr'] as const;
+
+/** Ein Bild einer Szene in einer Sprache (Sprechblasen in dieser Sprache). */
+export interface SceneImage {
+  lang: SceneLang;
+  /** Pfad im Storage (bzw. Dateiname im lokalen Modus) */
+  path: string;
+  /** Fertige URL zum Anzeigen */
+  url: string;
+  /** Bildbeschreibung für Screenreader */
+  alt: string;
+}
+
+/** Szene "Situation & Antwort": Bild + verknüpfter Eintrag als Antwort. */
+export interface Scene {
+  id: string;
+  entryId: string;
+  status: EntryStatus;
+  sortOrder: number;
+  images: SceneImage[];
+}
+
 export interface Catalog {
   emotions: Emotion[];
   entries: Entry[];
+  scenes: Scene[];
 }

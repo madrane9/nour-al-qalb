@@ -1,7 +1,24 @@
 {
-  "app": { "name": "Licht des Herzens", "tagline": "Für jedes Gefühl ein Vers. Für jedes Herz Hoffnung.", "skip": "Zum Inhalt springen" },
-  "nav": { "discover": "Entdecken", "search": "Suche", "favorites": "Favoriten", "admin": "Verwaltung", "login": "Anmelden", "logout": "Abmelden", "menu": "Navigation" },
-  "prefs": { "language": "Sprache", "theme": "Farbmodus", "light": "Hell", "dark": "Dunkel" },
+  "app": {
+    "name": "Licht des Herzens",
+    "tagline": "Für jedes Gefühl ein Vers. Für jedes Herz Hoffnung.",
+    "skip": "Zum Inhalt springen"
+  },
+  "nav": {
+    "discover": "Entdecken",
+    "search": "Suche",
+    "favorites": "Favoriten",
+    "admin": "Verwaltung",
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "menu": "Navigation"
+  },
+  "prefs": {
+    "language": "Sprache",
+    "theme": "Farbmodus",
+    "light": "Hell",
+    "dark": "Dunkel"
+  },
   "home": {
     "howFeel": "Wie fühlst du dich heute?",
     "daily": "Tägliche Inspiration",
@@ -10,7 +27,12 @@
     "loadError": "Die Inhalte konnten nicht geladen werden. Bitte versuche es später erneut.",
     "retry": "Erneut versuchen"
   },
-  "mode": { "label": "Ansicht", "jar": "Hoffnungsglas", "map": "Mindmap", "list": "Liste" },
+  "mode": {
+    "label": "Ansicht",
+    "jar": "Hoffnungsglas",
+    "map": "Mindmap",
+    "list": "Liste"
+  },
   "jar": {
     "title": "Das Hoffnungsglas",
     "hint": "Wähle ein Gefühl und ziehe einen Zettel aus dem Glas.",
@@ -53,7 +75,11 @@
     "audio": "Rezitation",
     "audioBy": "Quelle: {{name}}",
     "noTranslation": "Für diese Sprache liegt keine Übersetzung vor.",
-    "types": { "quran": "Koranvers", "hadith": "Hadith", "reflection": "Reflexion" }
+    "types": {
+      "quran": "Koranvers",
+      "hadith": "Hadith",
+      "reflection": "Reflexion"
+    }
   },
   "actions": {
     "favorite": "Zu Favoriten hinzufügen",
@@ -65,7 +91,11 @@
     "image": "Bildkarte speichern",
     "imageFailed": "Die Bildkarte konnte nicht erstellt werden."
   },
-  "favorites": { "title": "Meine Favoriten", "empty": "Noch keine Favoriten. Tippe bei einem Eintrag auf das Herz.", "guestNote": "Als Gast werden Favoriten nur in diesem Browser gespeichert. Melde dich an, um sie zu sichern." },
+  "favorites": {
+    "title": "Meine Favoriten",
+    "empty": "Noch keine Favoriten. Tippe bei einem Eintrag auf das Herz.",
+    "guestNote": "Als Gast werden Favoriten nur in diesem Browser gespeichert. Melde dich an, um sie zu sichern."
+  },
   "search": {
     "title": "Suche",
     "placeholder": "Begriff, Quelle oder Gefühl",
@@ -98,9 +128,22 @@
     "noAccess": "Kein Zugriff. Dieses Konto ist nicht als Administrator freigeschaltet.",
     "loginRequired": "Bitte melde dich an.",
     "notConfigured": "Supabase ist nicht konfiguriert (siehe README). Der Adminbereich benötigt die Datenbank.",
-    "stats": { "total": "Inhalte gesamt", "published": "Veröffentlicht", "drafts": "Entwürfe", "emotions": "Gefühle" },
-    "filters": { "status": "Status", "type": "Typ", "all": "Alle" },
-    "status": { "draft": "Entwurf", "published": "Veröffentlicht", "archived": "Archiviert" },
+    "stats": {
+      "total": "Inhalte gesamt",
+      "published": "Veröffentlicht",
+      "drafts": "Entwürfe",
+      "emotions": "Gefühle"
+    },
+    "filters": {
+      "status": "Status",
+      "type": "Typ",
+      "all": "Alle"
+    },
+    "status": {
+      "draft": "Entwurf",
+      "published": "Veröffentlicht",
+      "archived": "Archiviert"
+    },
     "edit": "Bearbeiten",
     "delete": "Löschen",
     "confirmDelete": "Diesen Eintrag endgültig löschen?",
@@ -152,8 +195,40 @@
       "add": "Gefühl hinzufügen",
       "save": "Speichern",
       "new": "Neues Gefühl"
+    },
+    "scenes": "Szenen",
+    "scene": {
+      "new": "Neue Szene",
+      "edit": "Szene bearbeiten",
+      "none": "Noch keine Szenen.",
+      "noImages": "keine Bilder",
+      "answer": "Antwort (Vers oder Hadith)",
+      "chooseAnswer": "Bitte wählen …",
+      "order": "Reihenfolge",
+      "images": "Bilder pro Sprache",
+      "imagesHelp": "WebP, PNG oder JPEG, max. 2 MB. Fehlt eine Sprache, wird ein anderes Bild gezeigt.",
+      "file": "Bild für {{lang}}",
+      "alt": "Bildbeschreibung (Text der Sprechblasen)",
+      "needImage": "Zum Veröffentlichen mindestens ein Bild hochladen.",
+      "needAlt": "Bitte zu jedem neuen Bild eine Beschreibung eingeben.",
+      "imageType": "Nur WebP, PNG oder JPEG erlaubt.",
+      "imageSize": "Das Bild ist größer als 2 MB.",
+      "confirmDelete": "Diese Szene samt Bildern endgültig löschen?"
     }
   },
-  "errors": { "notFound": "Seite nicht gefunden", "home": "Zur Startseite" },
-  "footer": "Quranverse und Übersetzungen: Quran.com. Eigene Erklärungen und Reflexionen sind als solche gekennzeichnet."
+  "errors": {
+    "notFound": "Seite nicht gefunden",
+    "home": "Zur Startseite"
+  },
+  "footer": "Quranverse und Übersetzungen: Quran.com. Eigene Erklärungen und Reflexionen sind als solche gekennzeichnet.",
+  "scenes": {
+    "title": "Situation & Antwort",
+    "hint": "Eine Szene aus dem Alltag. Was sagt der Koran dazu?",
+    "showAnswer": "Antwort zeigen",
+    "hideAnswer": "Antwort verbergen",
+    "prev": "Vorherige Szene",
+    "next": "Nächste Szene",
+    "counter": "Szene {{current}} von {{total}}",
+    "otherLang": "Für diese Sprache gibt es noch kein eigenes Bild."
+  }
 }

@@ -13,6 +13,7 @@ import { Dashboard } from '@/features/admin/Dashboard';
 import { EntriesList } from '@/features/admin/EntriesList';
 import { EntryEditor } from '@/features/admin/EntryEditor';
 import { EmotionsAdmin } from '@/features/admin/EmotionsAdmin';
+import { ScenesAdmin } from '@/features/admin/ScenesAdmin';
 
 function NotFound() {
   const { t } = useTranslation();
@@ -41,6 +42,7 @@ export default function App() {
                 <Route path="entries/new/:type" element={<EntryEditor />} />
                 <Route path="entries/:id" element={<EntryEditor />} />
                 <Route path="emotions" element={<EmotionsAdmin />} />
+                <Route path="scenes" element={<ScenesAdmin />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>

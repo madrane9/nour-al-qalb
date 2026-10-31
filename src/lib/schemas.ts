@@ -43,6 +43,21 @@ export const entryRowSchema = z.object({
 });
 export type EntryRow = z.infer<typeof entryRowSchema>;
 
+export const sceneRowSchema = z.object({
+  id: z.string(),
+  entry_id: z.string(),
+  status: z.enum(['draft', 'published', 'archived']),
+  sort_order: z.number(),
+  scene_images: z.array(
+    z.object({
+      lang: z.enum(['ar', 'de', 'en', 'fr']),
+      image_path: z.string(),
+      alt_text: z.string(),
+    }),
+  ),
+});
+export type SceneRow = z.infer<typeof sceneRowSchema>;
+
 const httpsUrl = z
   .string()
   .trim()
@@ -104,3 +119,11 @@ export const emotionFormSchema = z.object({
   archived: z.boolean(),
 });
 export type EmotionForm = z.infer<typeof emotionFormSchema>;
+
+/** Formular für Szenen im Adminbereich. Bilder werden separat hochgeladen. */
+export const sceneFormSchema = z.object({
+  entryId: z.string().min(1, 'required'),
+  status: z.enum(['draft', 'published', 'archived']),
+  sortOrder: z.number().int().min(0).max(9999),
+});
+export type SceneForm = z.infer<typeof sceneFormSchema>;

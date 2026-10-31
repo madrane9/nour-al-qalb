@@ -1,7 +1,24 @@
 {
-  "app": { "name": "Light of the Heart", "tagline": "A verse for every feeling. Hope for every heart.", "skip": "Skip to content" },
-  "nav": { "discover": "Discover", "search": "Search", "favorites": "Favorites", "admin": "Admin", "login": "Sign in", "logout": "Sign out", "menu": "Navigation" },
-  "prefs": { "language": "Language", "theme": "Color mode", "light": "Light", "dark": "Dark" },
+  "app": {
+    "name": "Light of the Heart",
+    "tagline": "A verse for every feeling. Hope for every heart.",
+    "skip": "Skip to content"
+  },
+  "nav": {
+    "discover": "Discover",
+    "search": "Search",
+    "favorites": "Favorites",
+    "admin": "Admin",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "menu": "Navigation"
+  },
+  "prefs": {
+    "language": "Language",
+    "theme": "Color mode",
+    "light": "Light",
+    "dark": "Dark"
+  },
   "home": {
     "howFeel": "How are you feeling today?",
     "daily": "Daily inspiration",
@@ -10,7 +27,12 @@
     "loadError": "The content could not be loaded. Please try again later.",
     "retry": "Try again"
   },
-  "mode": { "label": "View", "jar": "Hope jar", "map": "Mind map", "list": "List" },
+  "mode": {
+    "label": "View",
+    "jar": "Hope jar",
+    "map": "Mind map",
+    "list": "List"
+  },
   "jar": {
     "title": "The Hope Jar",
     "hint": "Choose a feeling and draw a slip from the jar.",
@@ -53,7 +75,11 @@
     "audio": "Recitation",
     "audioBy": "Source: {{name}}",
     "noTranslation": "No translation is available for this language.",
-    "types": { "quran": "Quran verse", "hadith": "Hadith", "reflection": "Reflection" }
+    "types": {
+      "quran": "Quran verse",
+      "hadith": "Hadith",
+      "reflection": "Reflection"
+    }
   },
   "actions": {
     "favorite": "Add to favorites",
@@ -65,7 +91,11 @@
     "image": "Save image card",
     "imageFailed": "The image card could not be created."
   },
-  "favorites": { "title": "My favorites", "empty": "No favorites yet. Tap the heart on any entry.", "guestNote": "As a guest, favorites are only stored in this browser. Sign in to keep them safe." },
+  "favorites": {
+    "title": "My favorites",
+    "empty": "No favorites yet. Tap the heart on any entry.",
+    "guestNote": "As a guest, favorites are only stored in this browser. Sign in to keep them safe."
+  },
   "search": {
     "title": "Search",
     "placeholder": "Term, source or feeling",
@@ -98,9 +128,22 @@
     "noAccess": "No access. This account has not been enabled as an administrator.",
     "loginRequired": "Please sign in.",
     "notConfigured": "Supabase is not configured (see README). The admin area needs the database.",
-    "stats": { "total": "Total entries", "published": "Published", "drafts": "Drafts", "emotions": "Feelings" },
-    "filters": { "status": "Status", "type": "Type", "all": "All" },
-    "status": { "draft": "Draft", "published": "Published", "archived": "Archived" },
+    "stats": {
+      "total": "Total entries",
+      "published": "Published",
+      "drafts": "Drafts",
+      "emotions": "Feelings"
+    },
+    "filters": {
+      "status": "Status",
+      "type": "Type",
+      "all": "All"
+    },
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "archived": "Archived"
+    },
     "edit": "Edit",
     "delete": "Delete",
     "confirmDelete": "Permanently delete this entry?",
@@ -152,8 +195,40 @@
       "add": "Add feeling",
       "save": "Save",
       "new": "New feeling"
+    },
+    "scenes": "Scenes",
+    "scene": {
+      "new": "New scene",
+      "edit": "Edit scene",
+      "none": "No scenes yet.",
+      "noImages": "no images",
+      "answer": "Answer (verse or hadith)",
+      "chooseAnswer": "Please choose …",
+      "order": "Order",
+      "images": "Images per language",
+      "imagesHelp": "WebP, PNG or JPEG, max. 2 MB. If a language is missing, another image is shown.",
+      "file": "Image for {{lang}}",
+      "alt": "Image description (speech bubble text)",
+      "needImage": "Upload at least one image to publish.",
+      "needAlt": "Please add a description for every new image.",
+      "imageType": "Only WebP, PNG or JPEG allowed.",
+      "imageSize": "The image is larger than 2 MB.",
+      "confirmDelete": "Delete this scene and its images permanently?"
     }
   },
-  "errors": { "notFound": "Page not found", "home": "Back to start" },
-  "footer": "Quran verses and translations: Quran.com. Own explanations and reflections are labeled as such."
+  "errors": {
+    "notFound": "Page not found",
+    "home": "Back to start"
+  },
+  "footer": "Quran verses and translations: Quran.com. Own explanations and reflections are labeled as such.",
+  "scenes": {
+    "title": "Situation & Answer",
+    "hint": "A scene from everyday life. What does the Quran say?",
+    "showAnswer": "Show answer",
+    "hideAnswer": "Hide answer",
+    "prev": "Previous scene",
+    "next": "Next scene",
+    "counter": "Scene {{current}} of {{total}}",
+    "otherLang": "There is no image for this language yet."
+  }
 }

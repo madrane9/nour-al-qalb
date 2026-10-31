@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import type { Catalog, Emotion, Entry } from '@/types';
+import type { Catalog, Emotion, Entry, Scene } from '@/types';
+import { visibleScenes } from '@/lib/scenes';
 import { loadCatalog } from '@/services/catalog';
 import { useAuth } from './AuthContext';
 
@@ -10,6 +11,9 @@ interface ContentValue {
   /** Öffentlich sichtbare Daten: veröffentlicht + nicht archivierte Gefühle. */
   publicEmotions: Emotion[];
   publicEntries: Entry[];
+  scenes: Scene[];
+  /** Szenen, die Besucher sehen dürfen. */
+  publicScenes: Scene[];
   reload: () => Promise<void>;
 }
 
@@ -17,7 +21,7 @@ const ContentContext = createContext<ContentValue | null>(null);
 
 export function ContentProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
-  const [catalog, setCatalog] = useState<Catalog>({ emotions: [], entries: [] });
+  const [catalog, setCatalog] = useState<Catalog>({ emotions: [], entries: [], scenes: [] });
   const [status, setStatus] = useState<ContentValue['status']>('loading');
 
   const reload = useCallback(async () => {
@@ -37,7 +41,8 @@ export function ContentProvider({ children }: { children: ReactNode }) {
   const value = useMemo<ContentValue>(() => {
     const publicEmotions = catalog.emotions.filter((e) => !e.archived);
     const publicEntries = catalog.entries.filter((e) => e.status === 'published');
-    return { status, ...catalog, publicEmotions, publicEntries, reload };
+    const publicScenes = visibleScenes(catalog.scenes, publicEntries);
+    return { status, ...catalog, publicEmotions, publicEntries, publicScenes, reload };
   }, [catalog, status, reload]);
 
   return <ContentContext.Provider value={value}>{children}</ContentContext.Provider>;

@@ -21,6 +21,7 @@ export function AdminLayout() {
         <NavLink to="/admin" end className={link}>{t('admin.dashboard')}</NavLink>
         <NavLink to="/admin/entries" className={link}>{t('admin.entries')}</NavLink>
         <NavLink to="/admin/emotions" className={link}>{t('admin.emotions')}</NavLink>
+        <NavLink to="/admin/scenes" className={link}>{t('admin.scenes')}</NavLink>
       </nav>
       <Outlet />
     </div>

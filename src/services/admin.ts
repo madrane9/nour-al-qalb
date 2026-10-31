@@ -1,4 +1,5 @@
-import type { EmotionForm, EntryForm } from '@/lib/schemas';
+import type { EmotionForm, EntryForm, SceneForm } from '@/lib/schemas';
+import type { SceneLang } from '@/types';
 import { supabase } from './supabase';
 
 function db() {
@@ -114,4 +115,69 @@ export async function saveEmotion(form: EmotionForm, id?: string): Promise<void>
   const q = id ? db().from('emotions').update(row).eq('id', id) : db().from('emotions').insert(row);
   const { error } = await q;
   if (error) throw error;
+}
+
+// ---------- Szenen ("Situation & Antwort") ----------
+
+const SCENE_BUCKET = 'scenes';
+const ALLOWED_IMAGE_TYPES = ['image/webp', 'image/png', 'image/jpeg'];
+const MAX_IMAGE_BYTES = 2 * 1024 * 1024; // muss zum Bucket-Limit in 0003_scenes.sql passen
+
+/** Legt eine Szene an oder ändert sie. Gibt die Szenen-ID zurück. */
+export async function saveScene(form: SceneForm, id?: string): Promise<string> {
+  const row = { entry_id: form.entryId, status: form.status, sort_order: form.sortOrder };
+  if (id) {
+    const { error } = await db().from('scenes').update(row).eq('id', id);
+    if (error) throw error;
+    return id;
+  }
+  const { data, error } = await db().from('scenes').insert(row).select('id').single();
+  if (error) throw error;
+  return (data as { id: string }).id;
+}
+
+/**
+ * Lädt ein Bild für eine Sprache hoch und speichert den Verweis.
+ * Ein altes Bild derselben Sprache wird danach gelöscht.
+ * Quelle: https://supabase.com/docs/reference/javascript/storage-from-upload
+ */
+export async function uploadSceneImage(sceneId: string, lang: SceneLang, file: File, alt: string, oldPath?: string): Promise<void> {
+  if (!ALLOWED_IMAGE_TYPES.includes(file.type)) throw new Error('image-type');
+  if (file.size > MAX_IMAGE_BYTES) throw new Error('image-size');
+  const ext = file.type.split('/')[1];
+  // Neuer Dateiname bei jedem Upload, damit Browser-Caches kein altes Bild zeigen.
+  const path = `${sceneId}/${lang}-${Date.now()}.${ext}`;
+  const c = db();
+  const { error: upErr } = await c.storage.from(SCENE_BUCKET).upload(path, file, { contentType: file.type, upsert: false });
+  if (upErr) throw upErr;
+  const { error } = await c
+    .from('scene_images')
+    .upsert({ scene_id: sceneId, lang, image_path: path, alt_text: alt }, { onConflict: 'scene_id,lang' });
+  if (error) {
+    await c.storage.from(SCENE_BUCKET).remove([path]); // Aufräumen, wenn der Verweis nicht gespeichert wurde
+    throw error;
+  }
+  if (oldPath && oldPath !== path) await c.storage.from(SCENE_BUCKET).remove([oldPath]);
+}
+
+/** Ändert nur die Bildbeschreibung (ohne neues Bild). */
+export async function updateSceneImageAlt(sceneId: string, lang: SceneLang, alt: string): Promise<void> {
+  const { error } = await db().from('scene_images').update({ alt_text: alt }).eq('scene_id', sceneId).eq('lang', lang);
+  if (error) throw error;
+}
+
+/** Entfernt das Bild einer Sprache (Datei + Verweis). */
+export async function deleteSceneImage(sceneId: string, lang: SceneLang, path: string): Promise<void> {
+  const c = db();
+  const { error } = await c.from('scene_images').delete().eq('scene_id', sceneId).eq('lang', lang);
+  if (error) throw error;
+  await c.storage.from(SCENE_BUCKET).remove([path]);
+}
+
+/** Löscht eine Szene samt aller Bilddateien. */
+export async function deleteScene(id: string, paths: string[]): Promise<void> {
+  const c = db();
+  const { error } = await c.from('scenes').delete().eq('id', id);
+  if (error) throw error;
+  if (paths.length) await c.storage.from(SCENE_BUCKET).remove(paths);
 }

@@ -1,6 +1,6 @@
-import type { Catalog, Emotion, Entry } from '@/types';
+import type { Catalog, Emotion, Entry, Scene } from '@/types';
 import { buildLocalCatalog } from '@/data/localCatalog';
-import { emotionRowSchema, entryRowSchema, type EntryRow } from '@/lib/schemas';
+import { emotionRowSchema, entryRowSchema, sceneRowSchema, type EntryRow, type SceneRow } from '@/lib/schemas';
 import { supabase } from './supabase';
 
 export function mapEmotion(row: unknown): Emotion {
@@ -45,23 +45,43 @@ export function mapEntry(row: EntryRow): Entry {
   };
 }
 
+/** Öffentliche URL einer Datei im Bucket "scenes". */
+export function sceneImageUrl(path: string): string {
+  if (!supabase) return path;
+  // Quelle: https://supabase.com/docs/reference/javascript/storage-from-getpublicurl
+  return supabase.storage.from('scenes').getPublicUrl(path).data.publicUrl;
+}
+
+export function mapScene(row: SceneRow): Scene {
+  return {
+    id: row.id,
+    entryId: row.entry_id,
+    status: row.status,
+    sortOrder: row.sort_order,
+    images: row.scene_images.map((i) => ({ lang: i.lang, path: i.image_path, url: sceneImageUrl(i.image_path), alt: i.alt_text })),
+  };
+}
+
 /**
  * Lädt den Katalog. Öffentlich liefert RLS nur veröffentlichte Einträge und
  * nicht archivierte Emotionen; ein Admin sieht zusätzlich Entwürfe/Archiviertes.
  */
 export async function loadCatalog(): Promise<Catalog> {
   if (!supabase) return buildLocalCatalog();
-  const [em, en] = await Promise.all([
+  const [em, en, sc] = await Promise.all([
     supabase.from('emotions').select('*').order('sort_order'),
     supabase
       .from('religious_entries')
       .select('*, religious_sources(name), entry_translations(*), entry_emotions(emotion_id)')
       .order('created_at', { ascending: false }),
+    supabase.from('scenes').select('*, scene_images(*)').order('sort_order'),
   ]);
   if (em.error) throw em.error;
   if (en.error) throw en.error;
   return {
     emotions: (em.data ?? []).map(mapEmotion),
     entries: (en.data ?? []).map((r) => mapEntry(entryRowSchema.parse(r))),
+    // Fehlt die Tabelle noch (Migration 0003 nicht ausgeführt), bleibt die Seite trotzdem nutzbar.
+    scenes: sc.error ? [] : (sc.data ?? []).map((r) => mapScene(sceneRowSchema.parse(r))),
   };
 }
