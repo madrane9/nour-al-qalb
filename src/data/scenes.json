@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "vergebung",
+    "entryKey": "39:53",
+    "sortOrder": 1,
+    "images": [
+      { "lang": "ar", "file": "vergebung-ar.svg", "alt": "شخص حزين يقول: ارتكبت أخطاء كثيرة، الله لن يغفر لي أبدًا. صديقه يسأل: وماذا يقول القرآن؟" },
+      { "lang": "de", "file": "vergebung-de.svg", "alt": "Eine traurige Person sagt: Ich habe so viele Fehler gemacht. Allah wird mir nie vergeben. Ein Freund fragt: Was sagt der Koran dazu?" },
+      { "lang": "en", "file": "vergebung-en.svg", "alt": "A sad person says: I have made so many mistakes. Allah will never forgive me. A friend asks: What does the Quran say?" },
+      { "lang": "fr", "file": "vergebung-fr.svg", "alt": "Une personne triste dit : J'ai commis tant d'erreurs. Allah ne me pardonnera jamais. Un ami demande : Que dit le Coran ?" }
+    ]
+  }
+]

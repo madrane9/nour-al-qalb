@@ -35,3 +35,18 @@ describe('visibleScenes', () => {
     expect(list.map((s) => s.id)).toEqual(['a', 'b']);
   });
 });
+
+describe('lokale Szenen (scenes.json)', () => {
+  it('jede Szene zeigt auf einen vorhandenen Vers und hat Bilder', async () => {
+    const { buildLocalCatalog } = await import('@/data/localCatalog');
+    const scenesJson = (await import('@/data/scenes.json')).default as unknown[];
+    const catalog = buildLocalCatalog();
+    // Eine Szene mit falscher entryKey würde still wegfallen. Das soll der Test bemerken.
+    expect(catalog.scenes).toHaveLength(scenesJson.length);
+    for (const s of catalog.scenes) {
+      expect(catalog.entries.some((e) => e.id === s.entryId)).toBe(true);
+      expect(s.images.length).toBeGreaterThan(0);
+      s.images.forEach((i) => expect(i.alt.trim()).not.toBe(''));
+    }
+  });
+});

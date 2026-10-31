@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF5E9"/><stop offset="1" stop-color="#F1E3C6"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/>
+<path d="M0 520 Q400 480 800 520 L800 600 L0 600Z" fill="#E6D3AA"/>
+<!-- Fenster mit Mond -->
+<rect x="372" y="40" width="110" height="100" rx="55" fill="#1F3A4D"/><circle cx="440" cy="82" r="18" fill="#F5D98B"/><circle cx="448" cy="76" r="16" fill="#1F3A4D"/>
+<!-- Person links (traurig) -->
+<g transform="translate(0 50)"><circle cx="190" cy="330" r="48" fill="#C98E6B"/><path d="M142 330 Q190 260 238 330 Q236 290 190 282 Q144 290 142 330Z" fill="#3B2A22"/>
+<path d="M172 344 Q178 338 184 344 M198 344 Q204 338 210 344" stroke="#3B2A22" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M176 368 Q190 358 204 368" stroke="#3B2A22" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M120 480 Q120 395 190 390 Q260 395 260 480Z" fill="#5B7C8D"/></g>
+<!-- Person rechts (Freund) -->
+<g transform="translate(0 50)"><circle cx="610" cy="330" r="48" fill="#A8714F"/><path d="M562 322 Q610 268 658 322 Q650 286 610 282 Q570 286 562 322Z" fill="#1E1A17"/>
+<circle cx="594" cy="340" r="5" fill="#1E1A17"/><circle cx="626" cy="340" r="5" fill="#1E1A17"/>
+<path d="M594 362 Q610 374 626 362" stroke="#1E1A17" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M540 480 Q540 395 610 390 Q680 395 680 480Z" fill="#B88A3B"/></g>
+<!-- Sprechblase links -->
+<path d="M30 40 h300 a24 24 0 0 1 24 24 v100 a24 24 0 0 1 -24 24 h-110 l-30 46 l-6 -46 h-154 a24 24 0 0 1 -24 -24 v-100 a24 24 0 0 1 24 -24z" fill="#fff" stroke="#2B2A28" stroke-width="3"/>
+<text x="192" y="92.0" font-size="30" text-anchor="middle" direction="rtl" font-family="'Noto Naskh Arabic','Amiri','Segoe UI',Tahoma,Arial,sans-serif" font-weight="700" fill="#2B2A28">ارتكبت أخطاء كثيرة،</text><text x="192" y="131.0" font-size="30" text-anchor="middle" direction="rtl" font-family="'Noto Naskh Arabic','Amiri','Segoe UI',Tahoma,Arial,sans-serif" font-weight="700" fill="#2B2A28">الله لن يغفر لي أبدًا</text>
+<!-- Sprechblase rechts -->
+<path d="M520 120 h220 a24 24 0 0 1 24 24 v90 a24 24 0 0 1 -24 24 h-90 l-24 40 l-14 -40 h-92 a24 24 0 0 1 -24 -24 v-90 a24 24 0 0 1 24 -24z" fill="#fff" stroke="#2B2A28" stroke-width="3"/>
+<text x="630" y="170.0" font-size="30" text-anchor="middle" direction="rtl" font-family="'Noto Naskh Arabic','Amiri','Segoe UI',Tahoma,Arial,sans-serif" font-weight="700" fill="#2B2A28">وماذا يقول</text><text x="630" y="209.0" font-size="30" text-anchor="middle" direction="rtl" font-family="'Noto Naskh Arabic','Amiri','Segoe UI',Tahoma,Arial,sans-serif" font-weight="700" fill="#2B2A28">القرآن؟</text>
+</svg>

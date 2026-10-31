@@ -32,6 +32,28 @@ Favoriten werden dann im Browser gespeichert. Admin und Anmeldung brauchen Supab
 ### Qualitätsprüfung
 Neue Einträge starten als **Entwurf**. Veröffentlichen geht erst, wenn „Ich habe Originaltext und Quelle manuell geprüft“ gesetzt ist, Quelle + Link (https) vorhanden sind (Hadith zusätzlich Bewertung + Bewertungsquelle). Das erzwingen sowohl das Formular (Zod) als auch die Datenbank (CHECK-Constraints).
 
+## Szenen "Situation & Antwort" (ohne Datenbank)
+
+Szenen liegen komplett im Repo und kosten nichts:
+
+1. Bild pro Sprache nach `public/scenes/` legen, z. B. `geduld-de.webp`, `geduld-ar.webp` (WebP, PNG, JPEG oder SVG, möglichst unter 300 KB).
+2. Eintrag in `src/data/scenes.json` ergänzen:
+   ```json
+   {
+     "id": "geduld",
+     "entryKey": "2:153",
+     "sortOrder": 2,
+     "images": [
+       { "lang": "de", "file": "geduld-de.webp", "alt": "Text der Sprechblasen auf Deutsch" },
+       { "lang": "ar", "file": "geduld-ar.webp", "alt": "نص الفقاعات بالعربية" }
+     ]
+   }
+   ```
+   `entryKey` ist die Versreferenz aus `src/data/quran-seed.json`. Fehlt der Vers dort, erst mit `npm run seed:quran` ergänzen.
+3. `npm test` prüft, dass jede Szene auf einen vorhandenen Vers zeigt. Danach committen und pushen.
+
+Fehlt eine Sprache, zeigt die Seite das arabische Bild. Nur eigene Bilder oder Bilder mit Erlaubnis verwenden.
+
 ## Religiöse Inhalte: was ist verifiziert, was nicht
 
 | Inhalt | Herkunft | Status |
