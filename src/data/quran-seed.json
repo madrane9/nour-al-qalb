@@ -1162,5 +1162,47 @@
       "reference": "12:86"
     },
     "audioUrl": "https://verses.quran.com/Alafasy/mp3/012086.mp3"
+  },
+  {
+    "id": "1031d586-7331-5f77-a04a-e6373fc1ccbd",
+    "key": "6:44",
+    "type": "quran",
+    "arabic": "فَلَمَّا نَسُوا۟ مَا ذُكِّرُوا۟ بِهِۦ فَتَحْنَا عَلَيْهِمْ أَبْوَٰبَ كُلِّ شَىْءٍ حَتَّىٰٓ إِذَا فَرِحُوا۟ بِمَآ أُوتُوٓا۟ أَخَذْنَـٰهُم بَغْتَةً فَإِذَا هُم مُّبْلِسُونَ",
+    "surah": {
+      "number": 6,
+      "nameAr": "الأنعام",
+      "nameEn": "Al-An'am"
+    },
+    "ayah": 44,
+    "emotionSlugs": [
+      "repentance",
+      "gratitude"
+    ],
+    "translations": [
+      {
+        "lang": "de",
+        "kind": "translation",
+        "body": "Als sie dann vergaßen, womit sie ermahnt worden waren, öffneten Wir ihnen die Tore zu allen Dingen. Als sie dann froh waren über das, was ihnen gegeben worden war, ergriffen Wir sie plötzlich. Da waren sie sogleich verzweifelt.",
+        "sourceName": "Frank Bubenheim and Nadeem (Quran.com)"
+      },
+      {
+        "lang": "en",
+        "kind": "translation",
+        "body": "So when they forgot that by which they had been reminded, We opened to them the doors of every [good] thing until, when they rejoiced in that which they were given, We seized them suddenly, and they were [then] in despair.",
+        "sourceName": "Saheeh International (Quran.com)"
+      },
+      {
+        "lang": "ar",
+        "kind": "explanation",
+        "body": "النعمة ماشي دليل على رضا الله. اللي نسى الله ممكن يتعطى كلشي ومن بعد يتاخذ منو فجأة، والرجوع لله دابا هو الخير.",
+        "sourceName": null
+      }
+    ],
+    "source": {
+      "name": "Quran.com",
+      "url": "https://quran.com/6/44",
+      "reference": "6:44"
+    },
+    "audioUrl": "https://verses.quran.com/Alafasy/mp3/006044.mp3"
   }
 ]
